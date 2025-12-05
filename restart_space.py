@@ -6,7 +6,16 @@ def restart_space():
     repo_id = "JinHuang1203/BeFM"  # Your Hugging Face Space
 
     try:
-        HfApi().restart_space(repo_id=repo_id, token=token)
+        api = HfApi(token=token)
+
+        # Check if space is already running
+        runtime = api.get_space_runtime(repo_id=repo_id)
+        if runtime.stage == "RUNNING":
+            print(f"Space {repo_id} is already running. Skipping restart.")
+            return
+
+        print(f"Space status: {runtime.stage}. Attempting to restart...")
+        api.restart_space(repo_id=repo_id)
         print(f"Successfully restarted Space: {repo_id}")
     except Exception as e:
         print(f"Failed to restart Space {repo_id}: {e}")
