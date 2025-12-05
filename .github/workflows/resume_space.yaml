@@ -1,0 +1,32 @@
+name: Resume Hugging Face Space (8am Eastern)
+
+on:
+  schedule:
+    # 8am Eastern Time (Mon-Fri)
+    # EDT (summer): 12:00 UTC = 8am EDT
+    # EST (winter): 13:00 UTC = 8am EST
+    - cron: '0 12 * * 1-5'  # 8am EDT
+    - cron: '0 13 * * 1-5'  # 8am EST
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  resume-space:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install huggingface_hub
+
+      - name: Resume Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python restart_space.py
