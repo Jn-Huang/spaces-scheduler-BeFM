@@ -2,8 +2,8 @@ name: Pause Hugging Face Space (5pm Eastern)
 
 on:
   schedule:
-    # TEST: 11:30am EST = 16:30 UTC
-    - cron: '30 16 * * 1-5'
+    # TEST: 11:25am EST = 16:25 UTC
+    - cron: '25 16 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
