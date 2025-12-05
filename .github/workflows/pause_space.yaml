@@ -2,11 +2,8 @@ name: Pause Hugging Face Space (5pm Eastern)
 
 on:
   schedule:
-    # 5pm Eastern Time (Mon-Fri)
-    # EDT (summer): 21:00 UTC = 5pm EDT
-    # EST (winter): 22:00 UTC = 5pm EST
-    - cron: '0 21 * * 1-5'  # 5pm EDT
-    - cron: '0 22 * * 1-5'  # 5pm EST
+    # TEST: 11:30am EST = 16:30 UTC
+    - cron: '30 16 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
