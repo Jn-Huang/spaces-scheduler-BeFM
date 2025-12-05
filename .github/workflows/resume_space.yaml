@@ -2,8 +2,8 @@ name: Resume Hugging Face Space (8am Eastern)
 
 on:
   schedule:
-    # TEST: 11am EST = 16:00 UTC
-    - cron: '0 16 * * 1-5'
+    # TEST: 11:10am EST = 16:10 UTC
+    - cron: '10 16 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
