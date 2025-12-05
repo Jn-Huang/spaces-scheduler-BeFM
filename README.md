@@ -1,14 +1,12 @@
-# 🤗 Spaces Scheduler
+# BeFM Space Scheduler
 
-[Hugging Face Spaces](https://huggingface.co/spaces) offer a simple way to host ML apps directly on the Hugging Face platform.
+[![Resume Hugging Face Space (8am Eastern)](https://github.com/Jn-Huang/spaces-scheduler-BeFM/actions/workflows/resume_space.yaml/badge.svg)](https://github.com/Jn-Huang/spaces-scheduler-BeFM/actions/workflows/resume_space.yaml)
 
-The [MPEP initiative](https://github.com/huggingface/data-is-better-together/tree/main/prompt_translation), a part of the [DIBT project](https://huggingface.co/DIBT), identifed a use case wherein it would be desireable to have performance dashboards hosted in Spaces refresh on a schedule.
+This repository controls the scheduling for the [BeFM Hugging Face Space](https://huggingface.co/spaces/JinHuang1203/BeFM).
 
-Efforts to build a `BackgroundScheduler()` function in the Gradio app proved [imperfect](https://github.com/huggingface/data-is-better-together/pull/33).
+**Paper:** [https://arxiv.org/abs/2505.23058](https://arxiv.org/abs/2505.23058)
 
-This repository is a lightweight scheduler that leverages [GitHub Actions](https://docs.github.com/en/actions) to externally trigger dashboard rebuild and by extension, data update.
-
-It may be generalized to induce refresh of arbitrary Hugging Face Spaces.
+The scheduler uses [GitHub Actions](https://docs.github.com/en/actions) to automatically start the Space at 8am ET on weekdays.
 
 # Usage
 
