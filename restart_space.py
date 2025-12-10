@@ -3,7 +3,7 @@ import os
 
 def restart_space():
     token = os.environ['HF_TOKEN'] # Please navigate to Settings > Secrets and variables > Actions and define "HF_TOKEN".
-    repo_id = "JinHuang1203/BeFM"  # Your Hugging Face Space
+    repo_id = "befm/BeFM"  # Your Hugging Face Space
 
     try:
         HfApi().restart_space(repo_id=repo_id, token=token)

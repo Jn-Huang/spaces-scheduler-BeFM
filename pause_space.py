@@ -3,7 +3,7 @@ import os
 
 def pause_space():
     token = os.environ['HF_TOKEN']
-    repo_id = "JinHuang1203/BeFM"  # Your Hugging Face Space
+    repo_id = "befm/BeFM"  # Your Hugging Face Space
 
     try:
         HfApi().pause_space(repo_id=repo_id, token=token)
