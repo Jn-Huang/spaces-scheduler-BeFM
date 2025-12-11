@@ -1,13 +1,13 @@
-name: Resume Hugging Face Space (10am Eastern)
+name: Set Evening Sleep Time (10pm Eastern)
 
 on:
   schedule:
-    # 10:00am ET = 15:00 UTC
-    - cron: '0 15 * * 1-5'
+    # 10:00pm ET = 03:00 UTC (next day)
+    - cron: '0 3 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  resume-space:
+  set-sleep-time:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,12 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install huggingface_hub
 
-      - name: Resume Hugging Face Space
+      - name: Set sleep time to 15 minutes
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python restart_space.py
-
-      - name: Set sleep time to 10 hours
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python set_sleep_time.py 36000
+        run: python set_sleep_time.py 900
